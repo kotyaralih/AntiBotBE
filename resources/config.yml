@@ -17,6 +17,7 @@ action: "ban-ip"
 # kick-all: kick all bots online
 
 # Protection from spam bots
+# Does not allow players to send messages to chat if they have not moved after logging into the server
 # Enable it only if you don't have any anti-spam plugins
 anti-spam-bots: false
 
