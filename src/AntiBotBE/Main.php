@@ -67,7 +67,8 @@ class Main extends PluginBase implements Listener{
                 case "ban-all":
                     foreach($this->getServer()->getOnlinePlayers() as $p){
                         if($p->getNetworkSession()->getIp() === $ip){
-                            $p->setBanned(true);
+                            $this->getServer()->getNameBans()->addBan($p->getName(), "Bot Detected");
+                            $p->kick();
                         }
                     }
                 break;
