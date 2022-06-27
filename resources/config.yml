@@ -1,0 +1,29 @@
+---
+# true: enable
+# false: disable
+
+# Maximum connections from one IP
+max-cons: 5
+
+# What to do against bots: ban-all, ban-ip, kick-new-entries, kick-all
+action: "ban-ip"
+
+# Suggested actions: ban-ip or kick-new-entries
+
+# Description:
+# ban-ip: ban-ip all bots online
+# ban-all: ban all bots online
+# kick-new-entries: kick new bots
+# kick-all: kick all bots online
+
+# Protection from spam bots
+# Enable it only if you don't have any anti-spam plugins
+anti-spam-bots: false
+
+# Do you want to send a message to player
+# if they tried to use chat without moving after join?
+notify-player: true
+
+# If true, this message will be sent to player
+notification: "You should move before sending a message!"
+...
