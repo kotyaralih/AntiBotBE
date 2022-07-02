@@ -1,6 +1,6 @@
 <?php
 
-namespace AntiBotBE;
+namespace kotyaralih\AntiBotBE;
 
 use pocketmine\event\Listener;
 use pocketmine\event\player\{PlayerPreLoginEvent, PlayerQuitEvent, PlayerMoveEvent, PlayerChatEvent};
