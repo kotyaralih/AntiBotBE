@@ -19,6 +19,7 @@ class Main extends PluginBase implements Listener{
     }
     
     public function onMove(PlayerMoveEvent $event){
+        if($event->getPlayer()->hasPermission("antibotbe.bypass")) return;
     	if($this->getConfig()->get("anti-spam-bots", true) and !isset($this->moved[$event->getPlayer()->getName()])){
 	    	$this->moved[$event->getPlayer()->getName()] = 1;
 			if(isset($this->msgs[$event->getPlayer()->getName()])){
@@ -29,6 +30,7 @@ class Main extends PluginBase implements Listener{
 	
 	public function onChat(PlayerChatEvent $event){
 		if(!$event->isCancelled()){
+                        if($event->getPlayer()->hasPermission("antibotbe.bypass")) return;
 			if($this->getConfig()->get("anti-spam-bots", true) and !isset($this->moved[$event->getPlayer()->getName()])){
 				if(!isset($this->msgs[$event->getPlayer()->getName()])){
 					$this->msgs[$event->getPlayer()->getName()] = 1;
@@ -53,6 +55,7 @@ class Main extends PluginBase implements Listener{
 	}
 
     public function onPreLogin(PlayerPreLoginEvent $event){
+        // todo: bypass player by getting config the playername...
         isset($this->IPs[$ip = $event->getIp()]) ? $this->IPs[$ip] += 1 : $this->IPs[$ip] = 1;
         if($this->IPs[$ip] > $this->getConfig()->get("max-cons", 5)){
             switch($this->getConfig()->get("action", "ban-ip")){
@@ -88,6 +91,7 @@ class Main extends PluginBase implements Listener{
     }
 
     public function onQuit(PlayerQuitEvent $event){
+        if($event->getPlayer()->hasPermission("antibotbe.bypass")) return;
         if(isset($this->IPs[$event->getPlayer()->getNetworkSession()->getIp()])){
             $this->IPs[$event->getPlayer()->getNetworkSession()->getIp()] -= 1;
             if(isset($this->moved[$event->getPlayer()->getName()])){
