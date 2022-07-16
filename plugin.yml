@@ -1,4 +1,8 @@
 name: AntiBotBE
 main: kotyaralih\AntiBotBE\Main
-version: 1.0.0
+version: 1.0.1
 api: 4.0.0
+permissions:
+     antibotpe.bypass:
+           default: op
+           description: Bypass Player (AntiBotBE)
