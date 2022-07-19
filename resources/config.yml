@@ -5,8 +5,6 @@
 # Maximum connections from one IP
 max-cons: 5
 
-check-ops: false
-
 # What to do against bots: ban-all, ban-ip, kick-new-entries, kick-all
 action: "ban-ip"
 
