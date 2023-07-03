@@ -74,7 +74,7 @@ class Main extends PluginBase implements Listener{
 					}
 				break;
 				case "kick-new-entries":
-					$event->setKickReason(0, "disconnectionScreen.noReason");
+					$event->setKickFlag(0, "disconnectionScreen.noReason");
 				break;
 				case "kick-all":
 					foreach($this->getServer()->getOnlinePlayers() as $p){
@@ -84,7 +84,7 @@ class Main extends PluginBase implements Listener{
 					}
 				break;
 			}
-			$event->setKickReason(0, "disconnectionScreen.noReason");
+			$event->setKickFlag(0, "disconnectionScreen.noReason");
 		}
 	}
 	
